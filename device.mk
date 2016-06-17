@@ -115,13 +115,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/motorola/shamu/spn-conf.xml:system/etc/spn-conf.xml
 
-<<<<<<< HEAD
-=======
-# Add swap activation script (workaround for the time being)
-PRODUCT_COPY_FILES += \
-    device/motorola/shamu/swapon.sh:system/xbin/swapon.sh
-
->>>>>>> df2f3ca... Initial Device Bringup.
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 560dpi
 # A list of dpis to select prebuilt apk, in precedence order.
@@ -212,6 +205,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     keystore.msm8084
+
+PRODUCT_PACKAGES += \
+    librmnetctl \
+    libxml2
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610
@@ -309,17 +306,6 @@ PRODUCT_COPY_FILES += \
     device/motorola/shamu/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/motorola/shamu/nfc/libnfc-brcm-20795a10.conf:system/etc/libnfc-brcm-20795a10.conf
 
-<<<<<<< HEAD
-=======
-# NFCEE access control
-PRODUCT_COPY_FILES += \
-    device/motorola/shamu/nfcee_access.xml:system/etc/nfcee_access.xml
-
-# old-apns.conf
-PRODUCT_COPY_FILES += \
-    device/motorola/shamu/old-apns-conf.xml:system/etc/old-apns-conf.xml
-
->>>>>>> df2f3ca... Initial Device Bringup.
 # Modem debugger
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 ifeq (,$(filter aosp_shamu, $(TARGET_PRODUCT)))
